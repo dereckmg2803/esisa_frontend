@@ -33,9 +33,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 md:gap-3 group" data-testid="logo-link">
-            <img 
-              src={LOGO_URL} 
-              alt="Glenia y Macondo" 
+            <img
+              src="/logo.png"
+              alt="Glenia y Macondo"
               className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform group-hover:scale-110"
             />
             <div className="flex flex-col">
@@ -56,9 +56,8 @@ const Header = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`font-manrope text-sm font-medium transition-all hover:text-[#D94E36] relative ${
-                  isActive(link.to) ? 'text-[#D94E36]' : 'text-stone-700'
-                }`}
+                className={`font-manrope text-sm font-medium transition-all hover:text-[#D94E36] relative ${isActive(link.to) ? 'text-[#D94E36]' : 'text-stone-700'
+                  }`}
                 data-testid={`nav-link-${link.label.toLowerCase()}`}
               >
                 {link.label}
@@ -133,18 +132,17 @@ const Header = () => {
                   key={link.to}
                   to={link.to}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-xl font-manrope text-sm font-medium transition-all ${
-                    isActive(link.to) 
-                      ? 'bg-gradient-to-r from-[#D94E36]/10 to-[#E9C46A]/10 text-[#D94E36] border-l-4 border-[#D94E36]' 
+                  className={`px-4 py-3 rounded-xl font-manrope text-sm font-medium transition-all ${isActive(link.to)
+                      ? 'bg-gradient-to-r from-[#D94E36]/10 to-[#E9C46A]/10 text-[#D94E36] border-l-4 border-[#D94E36]'
                       : 'text-stone-700 hover:bg-stone-100'
-                  }`}
+                    }`}
                   data-testid={`mobile-nav-link-${link.to.replace('/', '') || 'inicio'}`}
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-            
+
             {/* Mobile cultural touch */}
             <div className="mt-4 pt-4 border-t border-[#E9C46A]/20 text-center">
               <p className="font-caveat text-lg text-[#D94E36]">
