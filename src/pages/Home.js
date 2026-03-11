@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import ProductCard from '../components/ProductCard';
 import { Button } from '../components/ui/button';
 import { Skeleton } from '../components/ui/skeleton';
-
+import { MessageCircle } from "lucide-react";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
@@ -61,14 +61,14 @@ const Home = () => {
 
             {/* LEFT CONTENT */}
             <div className="text-center lg:text-left max-w-xl">
-
+              {/* no CONTENT
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-[#006D77] text-sm font-medium mb-6 shadow-md">
                 <Sparkles className="w-4 h-4 text-[#E9C46A]" />
                 {language === 'es'
                   ? 'Artesanía desde Colombia a Australia'
                   : 'Crafts from Colombia to Australia'}
               </span>
-
+ */}
               {/* Logo + brand */}
               <div className="flex items-center gap-4 justify-center lg:justify-start mb-6">
                 <img
@@ -110,7 +110,8 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button className="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-6 rounded-full text-lg shadow-lg">
+                  <Button className="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-6 rounded-full text-lg shadow-lg flex items-center gap-2">
+                    <MessageCircle size={22} />
                     WhatsApp
                   </Button>
                 </a>
