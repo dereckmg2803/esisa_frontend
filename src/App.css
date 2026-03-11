@@ -1,0 +1,346 @@
+/* Glenia y Macondo - Caribbean Artisan E-Commerce Styles */
+
+/* ========== HERO SECTION ========== */
+.hero-section {
+    position: relative;
+    min-height: 90vh;
+    overflow: hidden;
+}
+
+/* Hero Background with Tropical Scene */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+        /* Gradient fade effect */
+        linear-gradient(180deg, 
+            rgba(0, 109, 119, 0.1) 0%,
+            rgba(233, 196, 106, 0.2) 30%,
+            rgba(217, 78, 54, 0.1) 60%,
+            rgba(245, 240, 225, 0.95) 85%,
+            rgba(245, 240, 225, 1) 100%
+        ),
+        /* Tropical gradient base */
+        linear-gradient(135deg, 
+            #83C5BE 0%, 
+            #006D77 25%,
+            #48CAE4 50%,
+            #E9C46A 75%,
+            #F4A261 100%
+        );
+}
+
+/* Palm trees overlay */
+.hero-palms {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'%3E%3Cpath d='M50 200 L50 80 Q30 60 10 40 Q40 50 50 80 Q60 50 90 40 Q70 60 50 80' fill='%23228B22' opacity='0.15'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 200'%3E%3Cpath d='M50 200 L50 80 Q30 60 10 40 Q40 50 50 80 Q60 50 90 40 Q70 60 50 80' fill='%23228B22' opacity='0.1'/%3E%3C/svg%3E");
+    background-position: 0% 100%, 100% 100%;
+    background-size: 300px 400px, 250px 350px;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* Tropical flowers corners */
+.hero-flowers-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    height: 350px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='50' cy='150' r='35' fill='%23FF6B6B' opacity='0.8'/%3E%3Ccircle cx='30' cy='120' r='25' fill='%23F4A261' opacity='0.7'/%3E%3Ccircle cx='80' cy='180' r='28' fill='%23E9C46A' opacity='0.8'/%3E%3Ccircle cx='100' cy='140' r='20' fill='%23FF6B6B' opacity='0.6'/%3E%3Cellipse cx='60' cy='160' rx='8' ry='12' fill='%23FFE66D'/%3E%3Cellipse cx='40' cy='130' rx='6' ry='10' fill='%23FFE66D'/%3E%3Cpath d='M20 200 Q40 170 30 140 Q50 160 60 200' fill='%232D5016' opacity='0.6'/%3E%3Cpath d='M70 200 Q90 160 100 130 Q110 170 120 200' fill='%232D5016' opacity='0.5'/%3E%3C/svg%3E") no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero-flowers-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 300px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M150 0 Q160 40 200 30 Q170 50 200 80 Q150 60 150 0' fill='%232D5016' opacity='0.4'/%3E%3Cpath d='M180 20 Q170 60 200 70' stroke='%232D5016' stroke-width='3' fill='none' opacity='0.3'/%3E%3Ccircle cx='170' cy='40' r='15' fill='%23FF6B6B' opacity='0.5'/%3E%3Ccircle cx='185' cy='60' r='12' fill='%23E9C46A' opacity='0.5'/%3E%3C/svg%3E") no-repeat;
+    background-size: contain;
+    pointer-events: none;
+}
+
+/* ========== SECTION DIVIDERS ========== */
+.tropical-divider {
+    position: relative;
+    height: 100px;
+    background: linear-gradient(180deg, 
+        transparent 0%,
+        rgba(245, 240, 225, 0.5) 20%,
+        rgba(245, 240, 225, 1) 50%,
+        rgba(245, 240, 225, 0.5) 80%,
+        transparent 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tropical-divider-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+.flower-divider {
+    position: relative;
+    padding: 3rem 0;
+    background: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='15' fill='%23FF6B6B' opacity='0.3'/%3E%3Ccircle cx='30' cy='30' r='8' fill='%23FFE66D' opacity='0.5'/%3E%3C/svg%3E") repeat-x,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 5 Q25 15 20 20 Q15 15 20 5' fill='%232D5016' opacity='0.2'/%3E%3C/svg%3E") repeat-x;
+    background-position: center top, center bottom;
+    background-size: 60px 60px, 40px 40px;
+}
+
+/* Colombian Flag Wave Divider */
+.colombia-wave {
+    position: relative;
+    height: 20px;
+    background: linear-gradient(90deg,
+        #FCD116 0%,
+        #FCD116 50%,
+        #003893 50%,
+        #003893 75%,
+        #CE1126 75%,
+        #CE1126 100%
+    );
+    opacity: 0.6;
+}
+
+/* ========== CATEGORY CARDS ========== */
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 4px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(135deg, #D94E36, #E9C46A, #006D77) border-box;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 1;
+}
+
+.category-card:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(217, 78, 54, 0.3);
+}
+
+.category-card:hover img {
+    transform: scale(1.15);
+}
+
+.category-card img {
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== PRODUCT CARDS ========== */
+.product-card-artisan {
+    position: relative;
+    background: #FFFBF5;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.product-card-artisan::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #D94E36, #E9C46A, #006D77, #E9C46A, #D94E36);
+    background-size: 200% 100%;
+    animation: gradient-flow 3s ease infinite;
+}
+
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.product-card-artisan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(217, 78, 54, 0.2);
+}
+
+/* ========== BADGE STYLES ========== */
+.badge-nuevo {
+    background: linear-gradient(135deg, #006D77, #48CAE4);
+}
+
+.badge-oferta {
+    background: linear-gradient(135deg, #D94E36, #FF6B6B);
+}
+
+.badge-destacado {
+    background: linear-gradient(135deg, #E9C46A, #F4A261);
+    color: #1a1a1a;
+}
+
+.badge-popular {
+    background: linear-gradient(135deg, #264653, #2A9D8F);
+}
+
+.badge-artesanal {
+    background: linear-gradient(135deg, #8B4513, #D2691E);
+}
+
+.badge-clasico {
+    background: linear-gradient(135deg, #1D3557, #457B9D);
+}
+
+/* ========== WHATSAPP FLOATING BUTTON ========== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 25px rgba(37, 211, 102, 0.5);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 6px 35px rgba(37, 211, 102, 0.6);
+}
+
+/* ========== BUTTONS ========== */
+.btn-caribbean {
+    background: linear-gradient(135deg, #D94E36, #F4A261);
+    color: white;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(217, 78, 54, 0.35);
+    border: 2px solid transparent;
+}
+
+.btn-caribbean:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(217, 78, 54, 0.45);
+    background: linear-gradient(135deg, #F4A261, #D94E36);
+}
+
+.btn-teal {
+    background: linear-gradient(135deg, #006D77, #48CAE4);
+    color: white;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 109, 119, 0.35);
+}
+
+.btn-teal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 109, 119, 0.45);
+}
+
+/* ========== FOOTER ========== */
+.footer-pattern {
+    background: 
+        linear-gradient(180deg, transparent 0%, rgba(0, 109, 119, 0.97) 10%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M40 10 Q50 30 40 40 Q30 30 40 10' fill='%23ffffff' opacity='0.03'/%3E%3Ccircle cx='20' cy='60' r='8' fill='%23ffffff' opacity='0.02'/%3E%3Ccircle cx='60' cy='70' r='6' fill='%23ffffff' opacity='0.02'/%3E%3C/svg%3E");
+}
+
+/* ========== ARTISAN SECTION BACKGROUND ========== */
+.artisan-bg {
+    background-color: #FDF6E3;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 25 L55 30 L35 35 L30 55 L25 35 L5 30 L25 25 Z' fill='%23E9C46A' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ========== VUELTIAO PATTERN ========== */
+.vueltiao-pattern {
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 5px,
+        rgba(0, 0, 0, 0.03) 5px,
+        rgba(0, 0, 0, 0.03) 10px
+    );
+}
+
+/* ========== PRICE STYLES ========== */
+.price-original {
+    text-decoration: line-through;
+    color: hsl(var(--muted-foreground));
+}
+
+.price-current {
+    color: hsl(var(--primary));
+    font-weight: 700;
+}
+
+/* ========== RESPONSIVE HELPERS ========== */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 80vh;
+    }
+    
+    .hero-flowers-left {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-flowers-right {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .tropical-divider {
+        height: 60px;
+    }
+    
+    .tropical-divider-content {
+        font-size: 1.5rem;
+        gap: 1rem;
+    }
+}
+
+/* ========== LOADING SKELETON ========== */
+.skeleton {
+    background: linear-gradient(90deg, #F5F0E1 25%, #FFFBF5 50%, #F5F0E1 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ========== CULTURAL EXPRESSIONS BANNER ========== */
+.expressions-banner {
+    background: linear-gradient(90deg, 
+        #D94E36 0%, 
+        #E9C46A 25%, 
+        #006D77 50%, 
+        #E9C46A 75%, 
+        #D94E36 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-flow 4s ease infinite;
+}
