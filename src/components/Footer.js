@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-3 mb-4 group">
               <img
-                src={LOGO_URL}
+                src='/logo.png'
                 alt="Glenia y Macondo"
                 className="w-14 h-14 object-contain transition-transform group-hover:scale-110"
               />
