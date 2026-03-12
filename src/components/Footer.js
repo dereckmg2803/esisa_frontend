@@ -12,15 +12,15 @@ const Footer = () => {
     <footer className="footer-pattern text-white" data-testid="footer">
       {/* Tropical top border */}
       <div className="h-2 bg-gradient-to-r from-[#D94E36] via-[#E9C46A] to-[#006D77]" />
-      
+
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-3 mb-4 group">
-              <img 
-                src={LOGO_URL} 
-                alt="Glenia y Macondo" 
+              <img
+                src={LOGO_URL}
+                alt="Glenia y Macondo"
                 className="w-14 h-14 object-contain transition-transform group-hover:scale-110"
               />
               <div>
@@ -35,11 +35,11 @@ const Footer = () => {
             <p className="font-manrope text-sm text-white/85 leading-relaxed max-w-md">
               {t('aboutText')}
             </p>
-            
+
             {/* Social */}
             <div className="flex gap-4 mt-6">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/gleniamacondo/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#E1306C] transition-all hover:scale-110"
@@ -48,7 +48,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
-            
+
             {/* Cultural expression */}
             <div className="mt-6 inline-block bg-white/10 px-4 py-2 rounded-xl">
               <p className="font-caveat text-xl text-[#E9C46A]">
@@ -65,48 +65,48 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className="font-manrope text-sm text-white/85 hover:text-white hover:pl-2 transition-all"
                 >
                   {t('home')}
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/catalogo" 
+                <Link
+                  to="/catalogo"
                   className="font-manrope text-sm text-white/85 hover:text-white hover:pl-2 transition-all"
                 >
                   {t('catalog')}
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/catalogo?category=ropa" 
+                <Link
+                  to="/catalogo?category=ropa"
                   className="font-manrope text-sm text-white/85 hover:text-white hover:pl-2 transition-all"
                 >
                   Ropa
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/catalogo?category=bolsos" 
+                <Link
+                  to="/catalogo?category=bolsos"
                   className="font-manrope text-sm text-white/85 hover:text-white hover:pl-2 transition-all"
                 >
                   Bolsos
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/catalogo?category=libros" 
+                <Link
+                  to="/catalogo?category=libros"
                   className="font-manrope text-sm text-white/85 hover:text-white hover:pl-2 transition-all"
                 >
                   Libros
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/contacto" 
+                <Link
+                  to="/contacto"
                   className="font-manrope text-sm text-white/85 hover:text-white hover:pl-2 transition-all"
                 >
                   {t('contact')}
@@ -129,8 +129,8 @@ const Footer = () => {
                 <span className="font-manrope text-sm">Australia 🇦🇺</span>
               </li>
               <li>
-                <a 
-                  href="https://wa.me/573233094729" 
+                <a
+                  href="https://wa.me/573233094729"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-white/85 hover:text-white transition-colors group"
