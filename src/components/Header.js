@@ -84,7 +84,7 @@ const Header = () => {
 
             {/* Instagram */}
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/gleniamacondo/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-stone-700 hover:text-[#E1306C] transition-colors rounded-full hover:bg-pink-50"
@@ -133,8 +133,8 @@ const Header = () => {
                   to={link.to}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-4 py-3 rounded-xl font-manrope text-sm font-medium transition-all ${isActive(link.to)
-                      ? 'bg-gradient-to-r from-[#D94E36]/10 to-[#E9C46A]/10 text-[#D94E36] border-l-4 border-[#D94E36]'
-                      : 'text-stone-700 hover:bg-stone-100'
+                    ? 'bg-gradient-to-r from-[#D94E36]/10 to-[#E9C46A]/10 text-[#D94E36] border-l-4 border-[#D94E36]'
+                    : 'text-stone-700 hover:bg-stone-100'
                     }`}
                   data-testid={`mobile-nav-link-${link.to.replace('/', '') || 'inicio'}`}
                 >

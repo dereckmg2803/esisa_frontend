@@ -106,7 +106,7 @@ const Home = () => {
                 </Link>
 
                 <a
-                  href="https://wa.me/573233094729"
+                  href="https://wa.me/61424161743"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
