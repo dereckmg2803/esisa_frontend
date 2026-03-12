@@ -130,7 +130,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://wa.me/573233094729"
+                  href="https://wa.me/61424161743"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-white/85 hover:text-white transition-colors group"
@@ -138,7 +138,7 @@ const Footer = () => {
                   <div className="w-8 h-8 bg-[#25D366]/20 rounded-full flex items-center justify-center group-hover:bg-[#25D366]/40 transition-colors">
                     <Phone className="w-4 h-4 text-[#25D366]" />
                   </div>
-                  <span className="font-manrope text-sm">+57 323 309 4729</span>
+                  <span className="font-manrope text-sm">+61 424 161 743</span>
                 </a>
               </li>
             </ul>
