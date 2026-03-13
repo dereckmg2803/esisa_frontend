@@ -11,13 +11,16 @@ import { toast } from 'sonner';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
-const message = language === 'es'
-  ? 'Hola Glenia y Macondo 👋 Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
-  : 'Hello Glenia y Macondo 👋 I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
 
-const whatsappLink = `https://wa.me/61424161743?text=${encodeURIComponent(message)}`;
 const Contact = () => {
   const { t, language } = useLanguage();
+
+  const message = language === 'es'
+    ? 'Hola Glenia y Macondo. Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
+    : 'Hello Glenia y Macondo. I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
+
+  const whatsappLink = `https://wa.me/61424161743?text=${encodeURIComponent(message)}`;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -242,7 +245,7 @@ const Contact = () => {
                   : 'Write to us directly and we\'ll respond instantly.'}
               </p>
               <a
-                href="https://wa.me/61424161743"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-[#25D366] font-bold px-6 py-3 rounded-full hover:bg-white/90 transition-colors"
