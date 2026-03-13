@@ -12,6 +12,11 @@ const API = `${BACKEND_URL}/api`;
 
 // Logo del guacamayo
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_sisa-store/artifacts/mg58no54_image.png";
+const message = language === 'es'
+  ? 'Hola Glenia y Macondo 👋 Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
+  : 'Hello Glenia y Macondo 👋 I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
+
+const whatsappLink = `https://wa.me/61424161743?text=${encodeURIComponent(message)}`;
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -106,7 +111,7 @@ const Home = () => {
                 </Link>
 
                 <a
-                  href="https://wa.me/61424161743"
+                  href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -11,6 +11,11 @@ import { toast } from 'sonner';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
+const message = language === 'es'
+  ? 'Hola Glenia y Macondo 👋 Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
+  : 'Hello Glenia y Macondo 👋 I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
+
+const whatsappLink = `https://wa.me/61424161743?text=${encodeURIComponent(message)}`;
 const Contact = () => {
   const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
@@ -214,7 +219,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-syne font-semibold text-stone-800">WhatsApp</h3>
                     <a
-                      href="https://wa.me/61424161743"
+                      href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-manrope text-[#D94E36] hover:underline mt-1 block"
