@@ -9,8 +9,8 @@ const Footer = () => {
   const { t, language } = useLanguage();
 
   const message = language === 'es'
-    ? 'Hola Glenia y Macondo. Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
-    : 'Hello Glenia y Macondo. I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
+    ? 'Hola La tienda de Macondo. Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
+    : 'Hello La tienda de Macondo. I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
 
   const whatsappLink = `https://wa.me/61424161743?text=${encodeURIComponent(message)}`;
 
@@ -26,12 +26,12 @@ const Footer = () => {
             <Link to="/" className="inline-flex items-center gap-3 mb-4 group">
               <img
                 src='/logo.png'
-                alt="Glenia y Macondo"
+                alt="La tienda de Macondo"
                 className="w-14 h-14 object-contain transition-transform group-hover:scale-110"
               />
               <div>
                 <h3 className="font-syne text-2xl md:text-3xl font-bold text-white">
-                  Glenia y Macondo
+                  La tienda de Macondo
                 </h3>
                 <p className="font-caveat text-lg text-[#E9C46A]">
                   Libros y artesanía colombiana
@@ -172,7 +172,7 @@ const Footer = () => {
         <div className="pt-6 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-manrope text-sm text-white/70">
-              © {new Date().getFullYear()} Glenia y Macondo. {t('rights')}.
+              © {new Date().getFullYear()} La tienda de Macondo. {t('rights')}.
             </p>
             <p className="font-manrope text-sm text-white/70 flex items-center gap-2">
               Hecho con <Heart className="w-4 h-4 text-[#D94E36] fill-current animate-pulse" /> desde Colombia 🇨🇴

@@ -4,8 +4,8 @@ const WhatsAppButton = () => {
   const { language } = useLanguage();
 
   const message = language === 'es'
-    ? 'Hola Glenia y Macondo. Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
-    : 'Hello Glenia y Macondo. I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
+    ? 'Hola La tienda de Macondo. Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
+    : 'Hello La tienda de Macondo. I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
 
   const whatsappLink = `https://wa.me/61424161743?text=${encodeURIComponent(message)}`;
 

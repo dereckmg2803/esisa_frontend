@@ -12,8 +12,8 @@ const Home = () => {
   const { t, getCategoryName, getCategoryDescription, language } = useLanguage();
 
   const message = language === 'es'
-    ? 'Hola Glenia y Macondo. Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
-    : 'Hello Glenia y Macondo. I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
+    ? 'Hola La tienda de Macondo. Estuve viendo su página web y me gustaría conocer más sobre sus productos artesanales. ¿Podrían brindarme más información?'
+    : 'Hello La tienda de Macondo. I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
 
   const whatsappLink = `https://wa.me/61424161743?text=${encodeURIComponent(message)}`;
 
@@ -53,13 +53,12 @@ const Home = () => {
               <div className="flex items-center gap-4 justify-center lg:justify-start mb-6">
                 <img
                   src="/logo.png"
-                  alt="Glenia y Macondo Logo"
+                  alt="La tienda de Macondo Logo"
                   className="w-20 md:w-24 drop-shadow-lg"
                 />
 
-                <h1 className="font-syne text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                  <span className="text-[#006D77]">Glenia</span>
-                  <span className="text-[#D94E36]"> y </span>
+                <h1 className="font-syne text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                  <span className="text-[#006D77]">La tienda de </span>
                   <span className="text-[#E9C46A]">Macondo</span>
                 </h1>
               </div>
@@ -247,8 +246,8 @@ const Home = () => {
               </h2>
               <p className="font-manrope text-stone-700 leading-relaxed mb-4">
                 {language === 'es'
-                  ? 'Glenia y Macondo nace del amor por la cultura colombiana y el deseo de compartirla con la comunidad latina en Australia. Cada producto es una pieza de arte que cuenta la historia de nuestras raíces: los colores vibrantes del Carnaval de Barranquilla, los patrones ancestrales de las mochilas wayuu, y la magia literaria de Gabriel García Márquez.'
-                  : 'Glenia y Macondo was born from the love for Colombian culture and the desire to share it with the Latin community in Australia. Each product is a piece of art that tells the story of our roots: the vibrant colors of the Barranquilla Carnival, the ancestral patterns of wayuu bags, and the literary magic of Gabriel García Márquez.'}
+                  ? 'La tienda de Macondo nace del amor por la cultura colombiana y el deseo de compartirla con la comunidad latina en Australia. Cada producto es una pieza de arte que cuenta la historia de nuestras raíces: los colores vibrantes del Carnaval de Barranquilla, los patrones ancestrales de las mochilas wayuu, y la magia literaria de Gabriel García Márquez.'
+                  : 'La tienda de Macondo was born from the love for Colombian culture and the desire to share it with the Latin community in Australia. Each product is a piece of art that tells the story of our roots: the vibrant colors of the Barranquilla Carnival, the ancestral patterns of wayuu bags, and the literary magic of Gabriel García Márquez.'}
               </p>
               <p className="font-manrope text-stone-700 leading-relaxed mb-6">
                 {language === 'es'

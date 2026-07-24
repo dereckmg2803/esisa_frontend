@@ -65,7 +65,7 @@ const translations = {
     
     // Footer
     aboutUs: "Sobre Nosotros",
-    aboutText: "Glenia y Macondo trae la magia del Caribe colombiano a Australia. Cada producto cuenta una historia de arte, tradición y pasión por nuestra cultura.",
+    aboutText: "La tienda de Macondo trae la magia del Caribe colombiano a Australia. Cada producto cuenta una historia de arte, tradición y pasión por nuestra cultura.",
     quickLinks: "Enlaces Rápidos",
     followUs: "Síguenos",
     rights: "Todos los derechos reservados",
@@ -134,7 +134,7 @@ const translations = {
     
     // Footer
     aboutUs: "About Us",
-    aboutText: "Glenia y Macondo brings the magic of the Colombian Caribbean to Australia. Each product tells a story of art, tradition, and passion for our culture.",
+    aboutText: "La tienda de Macondo brings the magic of the Colombian Caribbean to Australia. Each product tells a story of art, tradition, and passion for our culture.",
     quickLinks: "Quick Links",
     followUs: "Follow Us",
     rights: "All rights reserved",
@@ -153,12 +153,12 @@ const translations = {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
-    const saved = localStorage.getItem('glenia-language');
+    const saved = localStorage.getItem('macondo-language');
     return saved || 'es';
   });
 
   useEffect(() => {
-    localStorage.setItem('glenia-language', language);
+    localStorage.setItem('macondo-language', language);
   }, [language]);
 
   const t = (key) => {

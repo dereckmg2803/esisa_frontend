@@ -35,13 +35,12 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2 md:gap-3 group" data-testid="logo-link">
             <img
               src="/logo.png"
-              alt="Glenia y Macondo"
+              alt="La tienda de Macondo"
               className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform group-hover:scale-110"
             />
             <div className="flex flex-col">
-              <span className="font-syne text-lg md:text-xl font-bold">
-                <span className="text-[#006D77]">Glenia</span>
-                <span className="text-[#D94E36]"> y </span>
+              <span className="font-syne text-lg md:text-xl font-bold leading-tight">
+                <span className="text-[#006D77]">La tienda de </span>
                 <span className="text-[#E9C46A]">Macondo</span>
               </span>
               <span className="font-caveat text-xs md:text-sm text-[#D94E36] -mt-1 hidden sm:block">

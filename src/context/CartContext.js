@@ -12,12 +12,12 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState(() => {
-    const saved = localStorage.getItem('glenia-cart');
+    const saved = localStorage.getItem('macondo-cart');
     return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('glenia-cart', JSON.stringify(items));
+    localStorage.setItem('macondo-cart', JSON.stringify(items));
   }, [items]);
 
   const addToCart = (product, quantity = 1, selectedSize = null, selectedColor = null) => {
