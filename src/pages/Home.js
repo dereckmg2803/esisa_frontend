@@ -1,23 +1,14 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import axios from 'axios';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import ProductCard from '../components/ProductCard';
 import { Button } from '../components/ui/button';
-import { Skeleton } from '../components/ui/skeleton';
 import { MessageCircle } from "lucide-react";
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-// Logo del guacamayo
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_sisa-store/artifacts/mg58no54_image.png";
-
+import { getCategories, getFeaturedProducts } from '../data/catalog';
 
 const Home = () => {
-  const [categories, setCategories] = useState([]);
-  const [featuredProducts, setFeaturedProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const categories = getCategories();
+  const featuredProducts = getFeaturedProducts();
   const { t, getCategoryName, getCategoryDescription, language } = useLanguage();
 
   const message = language === 'es'
@@ -25,23 +16,6 @@ const Home = () => {
     : 'Hello Glenia y Macondo. I was browsing your website and I would love to learn more about your handmade products. Could you please provide me with more information?';
 
   const whatsappLink = `https://wa.me/61424161743?text=${encodeURIComponent(message)}`;
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [catRes, prodRes] = await Promise.all([
-          axios.get(`${API}/categories`),
-          axios.get(`${API}/featured-products`)
-        ]);
-        setCategories(catRes.data);
-        setFeaturedProducts(prodRes.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
 
   const expressions = ['¡Eche!', '¡Apué!', '¡Añoñi!', '¡Sisa!'];
 
@@ -163,38 +137,30 @@ const Home = () => {
             </h2>
           </div>
 
-          {loading ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {[...Array(4)].map((_, i) => (
-                <Skeleton key={i} className="aspect-[3/4] rounded-xl" />
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {categories.map((category, index) => (
-                <Link
-                  key={category.id}
-                  to={`/catalogo?category=${category.slug}`}
-                  className={`category-card aspect-[3/4] animate-fade-in-up stagger-${index + 1}`}
-                  data-testid={`category-card-${category.slug}`}
-                >
-                  <img
-                    src={category.image}
-                    alt={getCategoryName(category)}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-                    <h3 className="font-syne text-xl md:text-2xl font-bold text-white drop-shadow-lg">
-                      {getCategoryName(category)}
-                    </h3>
-                    <p className="font-manrope text-sm text-white/90 mt-1 line-clamp-2">
-                      {getCategoryDescription(category)}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {categories.map((category, index) => (
+              <Link
+                key={category.id}
+                to={`/catalogo?category=${category.slug}`}
+                className={`category-card aspect-[3/4] animate-fade-in-up stagger-${index + 1}`}
+                data-testid={`category-card-${category.slug}`}
+              >
+                <img
+                  src={category.image}
+                  alt={getCategoryName(category)}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                  <h3 className="font-syne text-xl md:text-2xl font-bold text-white drop-shadow-lg">
+                    {getCategoryName(category)}
+                  </h3>
+                  <p className="font-manrope text-sm text-white/90 mt-1 line-clamp-2">
+                    {getCategoryDescription(category)}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -224,23 +190,11 @@ const Home = () => {
             </Link>
           </div>
 
-          {loading ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className="space-y-3">
-                  <Skeleton className="aspect-square rounded-xl" />
-                  <Skeleton className="h-4 w-3/4" />
-                  <Skeleton className="h-4 w-1/2" />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-              {featuredProducts.map((product, index) => (
-                <ProductCard key={product.id} product={product} index={index} />
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {featuredProducts.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
+            ))}
+          </div>
         </div>
       </section>
 

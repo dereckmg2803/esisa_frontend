@@ -1,20 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ShoppingCart, Heart, ChevronRight, Minus, Plus, Share2 } from 'lucide-react';
-import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 import { Button } from '../components/ui/button';
-import { Skeleton } from '../components/ui/skeleton';
 import { toast } from 'sonner';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { getProductBySlug } from '../data/catalog';
 
 const ProductDetail = () => {
   const { slug } = useParams();
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const product = getProductBySlug(slug);
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
@@ -24,25 +19,11 @@ const ProductDetail = () => {
   const { t, getProductName, getProductDescription, language } = useLanguage();
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      setLoading(true);
-      try {
-        const res = await axios.get(`${API}/products/${slug}`);
-        setProduct(res.data);
-        if (res.data.sizes?.length > 0) {
-          setSelectedSize(res.data.sizes[0]);
-        }
-        if (res.data.colors?.length > 0) {
-          setSelectedColor(res.data.colors[0]);
-        }
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProduct();
-  }, [slug]);
+    setQuantity(1);
+    setSelectedImage(0);
+    setSelectedSize(product?.sizes?.[0] || null);
+    setSelectedColor(product?.colors?.[0] || null);
+  }, [slug, product]);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-AU', {
@@ -79,24 +60,6 @@ const ProductDetail = () => {
   };
 
   const whatsappLink = product ? `https://wa.me/573233094729?text=${generateWhatsAppMessage()}` : '#';
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#FDFBF7] py-8">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            <Skeleton className="aspect-square rounded-2xl" />
-            <div className="space-y-4">
-              <Skeleton className="h-8 w-3/4" />
-              <Skeleton className="h-6 w-1/4" />
-              <Skeleton className="h-24 w-full" />
-              <Skeleton className="h-12 w-full" />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   if (!product) {
     return (

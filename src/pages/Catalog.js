@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Filter, Grid, List, ChevronRight } from 'lucide-react';
-import axios from 'axios';
 import { useLanguage } from '../context/LanguageContext';
 import ProductCard from '../components/ProductCard';
 import { Button } from '../components/ui/button';
-import { Skeleton } from '../components/ui/skeleton';
 import {
   Select,
   SelectContent,
@@ -13,49 +11,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../components/ui/select';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { getCategories, getProducts } from '../data/catalog';
 
 const Catalog = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [viewMode, setViewMode] = useState('grid');
   const { t, getCategoryName, language } = useLanguage();
 
   const selectedCategory = searchParams.get('category') || 'all';
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const res = await axios.get(`${API}/categories`);
-        setCategories(res.data);
-      } catch (error) {
-        console.error('Error fetching categories:', error);
-      }
-    };
-    fetchCategories();
-  }, []);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        const url = selectedCategory === 'all' 
-          ? `${API}/products`
-          : `${API}/products?category=${selectedCategory}`;
-        const res = await axios.get(url);
-        setProducts(res.data);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProducts();
-  }, [selectedCategory]);
+  const categories = getCategories();
+  const products = getProducts(selectedCategory);
 
   const handleCategoryChange = (value) => {
     if (value === 'all') {
@@ -182,17 +147,7 @@ const Catalog = () => {
         </div>
 
         {/* Products Grid */}
-        {loading ? (
-          <div className={`grid gap-4 md:gap-6 ${viewMode === 'grid' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : 'grid-cols-1'}`}>
-            {[...Array(8)].map((_, i) => (
-              <div key={i} className="space-y-3">
-                <Skeleton className="aspect-square rounded-xl" />
-                <Skeleton className="h-4 w-3/4" />
-                <Skeleton className="h-4 w-1/2" />
-              </div>
-            ))}
-          </div>
-        ) : products.length === 0 ? (
+        {products.length === 0 ? (
           <div className="text-center py-16">
             <p className="font-manrope text-stone-500 text-lg">
               {language === 'es' ? 'No hay productos en esta categoría' : 'No products in this category'}
